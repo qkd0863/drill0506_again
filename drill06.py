@@ -95,7 +95,6 @@ def update_world():
         set_new_target_arrow()
 
 
-
 open_canvas(TUK_WIDTH, TUK_HEIGHT)
 hide_cursor()
 load_resources()
