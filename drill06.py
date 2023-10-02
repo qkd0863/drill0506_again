@@ -91,6 +91,9 @@ def update_world():
             cx, cy = hx, hy
             del points[0]  # 목표 지점에 도달하면 점을 삭제
             set_new_target_arrow()
+    elif points:
+        set_new_target_arrow()
+
 
 
 open_canvas(TUK_WIDTH, TUK_HEIGHT)
