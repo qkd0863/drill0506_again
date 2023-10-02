@@ -68,8 +68,8 @@ def update_world():
         cy = (1 - t) * sy + t * hy
         t += 0.001
     else:
+        cx, cy = hx, hy
         set_new_target_arrow()
-
 
 
 open_canvas(TUK_WIDTH, TUK_HEIGHT)
