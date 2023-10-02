@@ -26,8 +26,6 @@ def handle_events():
 
 def reset_world():
     global running, cx, cy, frame
-    global hx, hy
-    global sx, sy
     global t
     global action
     running = True
