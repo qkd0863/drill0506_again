@@ -38,10 +38,12 @@ def reset_world():
 
 def set_new_target_arrow():
     global sx, sy, hx, hy, t
+    global action
     sx, sy = cx, cy
     # hx, hy = TUK_WIDTH - 50, TUK_HEIGHT - 50
     hx, hy = random.randint(0, TUK_WIDTH), random.randint(0, TUK_HEIGHT)
     t = 0.0
+    action = 1 if sx < hx else 0
 
 
 def render_world():
@@ -59,7 +61,7 @@ def update_world():
     global action
 
     frame = (frame + 1) % 8
-    action = 1 if cx < hx else 0
+
 
     if t <= 1.0:
         cx = (1 - t) * sx + t * hx
