@@ -29,9 +29,11 @@ def reset_world():
     global hx, hy
     global sx, sy
     global t
+    global action
     running = True
     cx, cy = TUK_WIDTH // 2, TUK_HEIGHT // 2
     frame = 0
+    action = 3
 
     sx, sy = cx, cy
 
@@ -44,7 +46,7 @@ def render_world():
     clear_canvas()
     TUK_ground.draw(TUK_WIDTH // 2, TUK_HEIGHT // 2)
     arrow.draw(hx, hy)
-    character.clip_draw(frame * 100, 100 * 1, 100, 100, cx, cy)
+    character.clip_draw(frame * 100, 100 * action, 100, 100, cx, cy)
     update_canvas()
 
 
@@ -52,7 +54,10 @@ def update_world():
     global frame
     global cx, cy
     global t
+    global action
+
     frame = (frame + 1) % 8
+    action = 1 if cx < hx else 0
 
     if t <= 1.0:
         cx = (1 - t) * sx + t * hx
